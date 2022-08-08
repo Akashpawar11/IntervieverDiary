@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interviewer Diary</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+
+        function applySelection() {
+            var techInputs = document.querySelectorAll('input.tech');
+            var techSel = document.getElementById('techSelection')
+            for (item of techInputs) {
+                item.addEventListener('click', (e) => {
+                    let bValue = e.target.value;
+                    console.log('button value is', bValue);
+                    techSel.value = bValue;
+                })
+            }
+        }
+        function applyRating() {
+            var starInputs = document.querySelectorAll('input.star');
+            var starSel = document.getElementById('starRating')
+            for (item of starInputs) {
+                item.addEventListener('click', (e) => {
+                    let bValue = e.target.value;
+                    console.log('button value is', bValue);
+                    starSel.value = bValue;
+                })
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1><a href="/">Interviewer Diary</a></h1>
+    <div class="menu">
+        <a href="/view">View Candidates</a>
+        <a href="/add" id="currentPageTask">Add Candidate</a>
+        <a href="/search">Search Candidate</a>
+        <a href="/update">Update Candidate</a>
+        <a href="/removesearch">Remove Candidate</a>
+
+    </div>
+    <div class="container">
+        <form action="/addcandidate">
+            <h3>Add Candidate</h3>
+
+            <hr>
+
+            <label for="FirstName"><b>First Name</b></label>
+            <input type="text" placeholder="Enter first name" name="FirstName" id="FirstName" required>
+
+            <label for="LastName"><b>Last Name</b></label>
+            <input type="text" placeholder="Enter last name" name="LastName" id="LastName" required>
+
+            <label for="phone"><b>Phone number</b></label>
+            <input type="number" placeholder="Enter Phone Number" name="phone" id="phone" required>
+                        
+                        {{!-- Dropdown of Applied For button --}}
+            <div class="dropdown">
+                <label for="techSelection"><b>Applied For</b></label>
+                <input class="dropbtn" id="techSelection" name="appliedfor" placeholder="Select Technology"
+                    value=""></input>
+
+                <div class="dropdown-content">
+                    <input class="tech" type="button" value="Front-end" onclick=applySelection()></input>
+                    <input class="tech" type="button" value="Back-end" onclick=applySelection()></input>
+                    <input class="tech" type="button" value="Full-Stack" onclick=applySelection()></input>
+                </div>
+            </div>
+                        {{!-- Dropdown of star rating --}}
+            <div class="dropdown">
+                <label for="starRating"><b>Rating</b></label>
+                <input class="dropbtn" id="starRating" name="rating" placeholder="Select Rating" value=""></input>
+                
+                <div class="dropdown-content">
+                    <input class="star" type="button" value=5 onclick=applyRating()></input>
+                    <input class="star" type="button" value=4 onclick=applyRating()></input>
+                    <input class="star" type="button" value=3 onclick=applyRating()></input>
+                    <input class="star" type="button" value=2 onclick=applyRating()></input>
+                    <input class="star" type="button" value=1 onclick=applyRating()></input>
+                </div>
+            </div>
+
+            <br>
+            <div class="submitbutton">
+                <button type="submit" class="registerbtn">Add Candidate</button>
+            </div>
+
+            {{#if mesg}}
+            <h3>Data Inserted</h3>
+            {{/if}}
+
+            {{#if checkmesg}}
+            <h3>Phone Number already present!</h3>
+            {{/if}}
+
+
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+
+</html>

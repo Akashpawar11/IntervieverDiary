@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Candidate Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1><a href="/">Interviewer Diary</a></h1>
+    <div class="menu">
+        <a href="/view">View Candidates</a>
+        <a href="/add">Add Candidate</a>
+        <a href="/search">Search Candidate</a>
+        <a href="/update" id="currentPageTask">Update Candidate</a>
+        <a href="/removesearch">Remove Candidate</a>
+    </div>
+    <div class="container" style="position: relative;left: 0;width: 350px; left:10%">
+        <form action="/updatesearch">
+
+            <label for="FirstName"><b>Name</b></label>
+            <input type="text" placeholder="type name to be searched" name="FirstName" id="FirstName"><br>
+            <div style="text-align: center;">OR</div><br>
+            <label for="phone"><b>Phone Number</b></label>
+            <input type="number" placeholder="type phone no to be searched" name="phone" id="phone">
+            
+            <div class="submitbutton">
+                <button type="submit" class="registerbtn">Search</button>
+            </div>
+
+            {{#if umesg}}
+            <h3>Data updated!</h3>
+            {{/if}}
+
+
+            {{#if mesg2}}
+            <h3>Data Not Found!</h3>
+            {{/if}}
+        </form>
+    </div>
+
+    <!--Search form design end-->
+
+    {{#if mesg1}}
+    <div class="container" style="position:absolute ;top :21%;left: 35%">
+        <form action="/updatecandidate">
+            <h3>Update Candidate Details</h3>
+
+            <hr>
+            {{#data}}
+            <label for="FirstName"><b>Name</b></label>
+            <input type="text" placeholder="Enter first name" name="FirstName" id="FirstName" value="{{FirstName}}"
+                required>
+            <input type="text" placeholder="Enter last name" name="LastName" id="LastName" value="{{LastName}}"
+                required>
+
+            <label for="phone"><b>Phone number</b></label>
+            <input type="number" placeholder="Enter Phone Number" name="phone" id="phone" value="{{phone}}" required>
+
+            <div class="dropdown">
+                <button class="dropbtn">Applied For</button>
+                <div class="dropdown-content">
+                    <ul class="nobull">
+                        <li><input type="radio" name="appliedfor" value="{{appliedfor}}"><b>Front-end</b></input></li>
+                        <li><input type="radio" name="appliedfor" value="{{appliedfor}}"><b>Back-end</b></input></li>
+                        <li><input type="radio" name="appliedfor" value="{{appliedfor}}"><b>Full-stack</b></input></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Rating</button>
+                <div class="dropdown-content">
+                    <ul class="nobull">
+                        <li><input type="radio" name="rating" value=5><b>5 - Outstanding</b></input></li>
+                        <li><input type="radio" name="rating" value=4><b>4 - Very Good</b></input></li>
+                        <li><input type="radio" name="rating" value=3><b>3 - Good</b></input></li>
+                        <li><input type="radio" name="rating" value=2><b>2 - Improvement Needed</b></input></li>
+                        <li><input type="radio" name="rating" value=1><b>1 - Unsatisfactory</b></input></li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <div class="submitbutton">
+                <button type="submit" class="registerbtn">Update Details</button>
+            </div>
+            {{/data}}
+
+
+        </form>
+    </div>
+
+    {{/if}}
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove candidate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1><a href="/">Interviewer Diary</a></h1>
+    <div class="menu">
+        <a href="/view">View Candidates</a>
+        <a href="/add">Add Candidate</a>
+        <a href="/search">Search Candidate</a>
+        <a href="/update">Update Candidate</a>
+        <a href="/removesearch" id="currentPageTask">Remove Candidate</a>
+    </div>
+    <div id="table" style="top:21%;width:50vw;">
+        <h1>All candidates</h1>
+        <table style="width:50vw; margin-left:1vw;">
+            <thead>
+                <tr align="center">
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Applied For</th>
+                    <th scope="col">Rating (out of 5)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#data}}
+                <tr>
+                    <td align="center">{{FirstName}}</td>
+                    <td align="center">{{LastName}}</td>
+                    <td align="center">{{phone}}</td>
+                    <td align="center">{{appliedfor}}</td>
+                    <td align="center">{{rating}}</td>
+                </tr>
+                {{/data}}
+            </tbody>
+        </table>
+    </div>
+    <div class="container" style="position:absolute ;top :24%;left: 55%">
+        <form action="/removecandidate">
+            <h3>Remove Candidate</h3>
+
+            <hr>
+
+            <label for="FirstName"><b>Name</b></label>
+            <input type="text" placeholder="type name of to be removed" name="FirstName" id="FirstName"><br>
+            <div style="text-align: center;">OR</div><br>
+            <label for="phone"><b>Phone no</b></label>
+            <input type="number" placeholder="type phone no of candidate" name="phone" id="phone">
+
+            <div class="submitbutton">
+                <button type="submit" class="registerbtn">Remove Candidate</button>
+            </div>
+            <br>
+
+            {{#if mesg1}}
+            <h3>Data Removed!</h3>
+            <h3>Reload page to see updated table.</h3>
+            
+            {{/if}}
+
+            {{#if mesg2}}
+            <h3>Not found!</h3>
+            {{/if}}
+        </form>
+    </div>
+</body>
+
+</html>

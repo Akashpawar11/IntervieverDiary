@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Candidates</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1><a href="/">Interviewer Diary</a></h1>
+    <div class="menu">
+        <a href="/view" id="currentPageTask">View Candidates</a>
+        <a href="/add">Add Candidate</a>
+        <a href="/search">Search Candidate</a>
+        <a href="/update">Update Candidate</a>
+        <a href="/removesearch">Remove Candidate</a>
+    </div>
+    <h2 style="text-align:center; font-weight:bold ;" >Information About Candidates</h2>
+
+    <div class="table">
+        <table>
+            <thead>
+                <tr align="center">
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Applied For</th>
+                    <th scope="col">Rating (out of 5)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#data}}
+                <tr>
+                    <td align="center">{{FirstName}}</td>
+                    <td align="center">{{LastName}}</td>
+                    <td align="center">{{phone}}</td>
+                    <td align="center">{{appliedfor}}</td>
+                    <td align="center">{{rating}}</td>
+                </tr>
+                {{/data}}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

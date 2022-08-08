@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Candidate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1><a href="/">Interviewer Diary</a></h1>
+    <div class="menu">
+        <a href="/view">View Candidates</a>
+        <a href="/add">Add Candidate</a>
+        <a href="/search" id="currentPageTask">Search Candidate</a>
+        <a href="/update">Update Candidate</a>
+        <a href="/removesearch">Remove Candidate</a>
+    </div>
+    <div class="container">
+        <form action="/searchcandidate">
+            <h3>Search Candidate</h3>
+
+            <hr>
+
+            <label for="FirstName"><b>Name</b></label>
+            <input type="text" placeholder="type name to be searched" name="FirstName" id="FirstName"><br>
+            <div style="text-align: center;">OR</div><br>
+
+            <label for="phone"><b>Phone Number</b></label>
+            <input type="number" placeholder="type phone no to be searched" name="phone" id="phone">
+
+            <div class="submitbutton">
+                <button type="submit" class="registerbtn">Search candidate</button>
+            </div>
+            <br>
+            {{#if mesg1}}
+            <div id="table">
+                <table>
+                    <thead>
+                        <tr align="center">
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Applied For</th>
+                            <th scope="col">Rating (out of 5)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#data}}
+                        <tr>
+                            <td align="center">{{FirstName}}</td>
+                            <td align="center">{{LastName}}</td>
+                            <td align="center">{{phone}}</td>
+                            <td align="center">{{appliedfor}}</td>
+                            <td align="center">{{rating}}</td>
+                        </tr>
+                        {{/data}}
+                    </tbody>
+                </table>
+            </div>
+            {{/if}}
+
+            {{#if mesg2}}
+            <h3>Data Not Found!</h3>
+            {{/if}}
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+}
+
+/* navbar */
+body {
+    background-image: url('lightsky.jpg');
+    background-size: cover;
+    font-family: "calibri";
+    display: flex;
+    flex-direction: column;
+    margin: 2px;
+    /* background-color: rgb(215, 167, 167); */
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+body h1 {
+    text-align: center;
+    font-size: 3vw;
+    background: -webkit-linear-gradient(rgb(1, 22, 26), rgb(0, 117, 41));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0.2rem 0 1rem 0;
+}
+
+body h1 a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+body h1 a:hover {
+    color: rgb(189, 0, 0);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(0, 90, 123);
+    border: 3px solid rgb(228 255 20);
+    border-radius: 30px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.menu a {
+    font-size: 1.1vw;
+    font-weight: bolder;
+    color: white;
+    text-decoration: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.menu a:hover {
+    color: gold;
+}
+
+/* Home page text */
+/* #homepage{
+    padding: 0rem 2rem;
+} */
+
+#homepageContent {
+    margin: 0 1em 0 1em;
+}
+
+#homepageBrief p {
+    font-family: Helvetica;
+    font-size: 3.9vw;
+    font-weight: bold;
+    color: rgb(26, 107, 178);
+}
+
+#homepageBrief text {
+    color: rgb(4, 23, 58);
+}
+
+#homepageUl text {
+    font-size: 2vw;
+    font-weight: 800;
+    color: rgb(109 23 1);
+
+}
+
+#homepage li {
+    font-size: 1vw;
+    padding-top: 8px;
+    color: black;
+
+}
+
+/* To highlight current page from navbar */
+#currentPageTask {
+    color: rgb(255, 217, 0);
+    font-weight: bolder;
+}
+
+/*  Glass effect */
+.container {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 40%;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    top: 2%;
+    border-radius: 10px;
+}
+
+.container h3 {
+    text-align: center;
+    margin: 0 0 0 0;
+}
+
+/* Dropdown of AppliedFor Button */
+
+/* Style The Dropdown Button */
+.dropbtn {
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    width: 40%;
+    margin-left: 4%;
+    margin-right: 4%;
+    display: inline-block;
+}
+
+
+/* Dropdown Content*/
+.dropdown-content {
+    right: 0;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+div.dropdown label{
+    display: block;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1em;
+}
+
+.dropdown-content input {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: none;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+.dropdown-content input:active{
+    opacity: 0.7;
+
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content input:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.378);
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    opacity: 0.9;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+
+
+/* Full-width input fields */
+
+input[type=text],
+input[type=number] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 12px 0;
+    display: inline-block;
+    border: none;
+    background: rgba(255, 255, 255, 0.253);
+}
+
+input[type=text]:focus,
+input[type=number]:focus {
+    background-color: rgb(255, 255, 255);
+    outline: none;
+}
+
+
+/* Set a style for the submit button */
+
+.submitbutton {
+    padding-top: 1em;
+    text-align: center;
+}
+
+.registerbtn {
+    /* background-color: #cd0d0d; */
+    justify-self: center;
+    width: 40%;
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-right: 10%;
+    background: linear-gradient(90deg, rgb(0 23 27), rgb(2 204 255 / 84%));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.registerbtn:hover {
+    opacity: 0.9;
+    background: linear-gradient(270deg, rgb(0 23 27), rgb(2 204 255 / 84%));
+}
+
+/* Table Designing */
+/* div.table {
+    position: relative;
+    width: 80%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2em;
+} */
+
+table {
+    width: 80%;
+    text-align: center;
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+table thead {
+    background-color: rgb(0, 50, 63);
+    height: 3vw;
+    border: 2px solid rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+table thead tr th {
+    width: 20%;
+}
+
+
+table td {
+    height: 2.5vw;
+    border: 1px solid rgba(255, 255, 255, 0.414);
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    border-collapse: collapse;
+}
